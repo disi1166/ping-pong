@@ -1,0 +1,21 @@
+<div class="game__player game__player--left <% if (winner == 1) { %>game__player--left--winner<% } %>">
+  <img class="game__image" src="<%=players[0].image%>">
+  <%=players[0].name%>
+</div>
+<div class="game__result">
+  <span><%=scores[0]%></span>
+  <span>-</span>
+  <span><%=scores[1]%></span>
+</div>
+<div class="game__player game__player--right <% if (winner == 2) { %>game__player--right--winner<% } %>">
+  <%=players[1].name%>
+  <img class="game__image" src="<%=players[1].image%>">
+</div>
+<div class="game__sets-score">
+  <%_.each(setScores, function(setScore, i) { %>
+    <%= setScores[i][0] %>-<%= setScores[i][1] %>
+    <%if (i < setScores.length - 1) { %>|<% } %>
+  <% }); %>
+</div>
+<div class="game__delete-icon">
+</div>
